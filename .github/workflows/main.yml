@@ -18,3 +18,7 @@ jobs:
         run: |
           echo "Você criou seu primeiro job :)!"
           echo Parabéns!
+      - name: "Script python"
+        run: |
+          variavel = "Hello Python"
+          print(variavel)
