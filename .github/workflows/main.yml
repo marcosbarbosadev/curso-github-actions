@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: "Minha primeira ação"
-        run: echo Hello, world!
+        run: ech Hello, world!
 
       - name: "Segunda ação"
         run: |
