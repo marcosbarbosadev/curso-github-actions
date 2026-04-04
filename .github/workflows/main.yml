@@ -25,7 +25,7 @@ jobs:
         shell: python
   segundo-job:
     name: "Instalação do NodeJS"
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
       steps:
         - name: "Verificação da versão atual do NodeJS"
           run: node --version
