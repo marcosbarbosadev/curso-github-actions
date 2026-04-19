@@ -1,4 +1,4 @@
-name: Curso de github actions
+name: Curso-github-actions
 
 on:
   push:
