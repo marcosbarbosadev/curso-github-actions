@@ -4,35 +4,19 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
-
+env:
+  ENV_WORKFLOW: "Teste de env do workflow"
 jobs:
-  primeiro-job:
-    name: "Meu primeiro Job"
+  teste-env:
     runs-on: ubuntu-latest
+    env:
+      ENV_JOB: "Valor env do job"
 
     steps:
-      - name: "Minha primeira ação"
-        run: echo Hello, world!
-
-      - name: "Segunda ação"
+      - name: Execução
+        env:
+          ENV_ACTION: "env da minha action"
         run: |
-          echo "Você criou seu primeiro job :)!"
-          echo Parabéns!
-      - name: "Script python"
-        run: |
-          variavel = "Hello Python"
-          print(variavel)
-        shell: python
-  segundo-job:
-    name: "Instalação do NodeJS"
-    runs-on: ubuntu-latest
-    needs: [primeiro-job]
-    steps:
-      - name: "Verificação da versão atual do NodeJS"
-        run: node --version
-      - name: "Definição da versão 20.13.1"
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.13.1'
-      - name: "Verificação da versão depois de atualização"
-        run: node --version
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
+          echo "$ENV_ACTION"
