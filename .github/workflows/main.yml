@@ -1,4 +1,4 @@
-name: Curso-github-actions
+name: Curso github ctions
 
 on:
   push:
